@@ -7,10 +7,8 @@ public class QuestionVO {
 	private String subject;
 	private String content;
 	private int hit;
-	private String wirtedate;
+	private String writedate;
 	private String ip;
-	
-	
 	public int getNo() {
 		return no;
 	}
@@ -41,11 +39,11 @@ public class QuestionVO {
 	public void setHit(int hit) {
 		this.hit = hit;
 	}
-	public String getWirtedate() {
-		return wirtedate;
+	public String getWritedate() {
+		return writedate;
 	}
-	public void setWirtedate(String wirtedate) {
-		this.wirtedate = wirtedate;
+	public void setWritedate(String writedate) {
+		this.writedate = writedate;
 	}
 	public String getIp() {
 		return ip;

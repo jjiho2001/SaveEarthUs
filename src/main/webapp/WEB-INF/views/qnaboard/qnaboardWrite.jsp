@@ -28,7 +28,7 @@
 </script>
 <div class="container">
 	<h1>질문게시글 작성</h1>
-	<form method="post" action="qnaboard/writeOk" id="qnaFrm">
+	<form method="post" action="/qnaboard/writeOk" id="qnaFrm">
 		<ul>
 			<li>제목</li>
 			<li>
