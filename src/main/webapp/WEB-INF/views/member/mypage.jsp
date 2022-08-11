@@ -25,7 +25,7 @@
 		background-color:#fff;
 		width:700px;
 		height:400px;
-		overflow:auto;
+		overflow:hidden;
 		border:1px solid #ebecee;
 		border-radius:15px;
 	}
@@ -44,8 +44,8 @@
 	.info{
 		width:250px;
 		position:relative;
-		top:-180px;
-		left:300px;
+		top:-242px;
+		left:252px;
 	}
 	.info li{
 		float:left;
@@ -63,15 +63,15 @@
 		font-weight:bold;
 		margin:10px;
 		position:relative;
-		left:-200px;
-		top:20px;
+		left:42px;
+		top:-440px;
 		
 	}
 	#editBtn input{
 		padding: 5px 10px;
 		position:relative;
-		left:132px;
-		top:-30px;
+		left:370px;
+		top:-500px;
 		font-size:15px;
 		font-weight:bold;
 		background-color:#33c24d;
