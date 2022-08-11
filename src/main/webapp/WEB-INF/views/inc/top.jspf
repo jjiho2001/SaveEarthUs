@@ -21,7 +21,7 @@
 				<li><a href="#">소개</a></li>
 				<li><a href="#">활동</a></li>
 				<li><a href="#">소식</a></li>
-				<li><a href="#">자료</a></li>
+				<li><a href="/report/reportList">자료</a></li>
 				<li><a href="#">후원</a></li>
 			</ul>
 		</div>

@@ -16,14 +16,43 @@ public class ReportServiceImpl implements ReportService {
 	ReportDAO dao;
 
 	@Override
-	public List<ReportVO> reportSelect() {
+	public List<ReportVO> reportAllSelect() {
 		
-		return dao.reportSelect();
+		return dao.reportAllSelect();
 	}
 
 	@Override
 	public int reportInsert(ReportVO rvo) {
 		
 		return dao.reportInsert(rvo);
+	}
+
+	@Override
+	public ReportVO reportSelect(int no) {
+		
+		return dao.reportSelect(no);
+	}
+
+	@Override
+	public void hitUpdate(int no) {
+		dao.hitUpdate(no);
+	}
+
+	@Override
+	public String getFilename(int no) {
+		
+		return dao.getFilename(no);
+	}
+
+	@Override
+	public int reportUpdate(ReportVO rvo) {
+		
+		return dao.reportUpdate(rvo);
+	}
+
+	@Override
+	public int reportDelete(int no) {
+		
+		return dao.reportDelete(no);
 	}
 }
