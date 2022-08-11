@@ -25,9 +25,15 @@ public class QuestionServiceImpl implements QuestionService {
 	}
 
 	@Override
-	public List<QuestionVO> qnaboardlist() {
+	public List<QuestionVO> qnaboardlist(String userid) {
 		// TODO Auto-generated method stub
-		return dao.qnaboardList();
+		return dao.qnaboardList(userid);
+	}
+
+	@Override
+	public int qnaboardDel(int no, String userid) {
+		// TODO Auto-generated method stub
+		return dao.qnaboardDel(no, userid);
 	}
 
 	

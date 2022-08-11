@@ -96,7 +96,7 @@
 		<li><input type="text" name="email" id="email" value="${vo.email}" readonly/></li>	
 	</ul>
 	<ul class="link">
-		<li><a href="#" style="color:#444;">나의 질문 보기</a></li>
+		<li><a href="/qnaboard/list?userid=${vo.userid }" style="color:#444;">나의 질문 보기</a></li>
 		<li><a href="#" style="color:#444;">나의 후원 보기</a></li>
 	</ul>
 	<div id="editBtn"><input type="button" onclick="location.href='/member/memberEdit';" value="회원정보수정"/></div>

@@ -40,7 +40,7 @@
 			</li>
 			<li>
 				<input type="submit" value="글등록"/>
-				<input type="reset" value="다시쓰기"/>
+<!-- 				<input type="reset" value="다시쓰기"/> -->
 			</li>
 		</ul> 
 	</form>
