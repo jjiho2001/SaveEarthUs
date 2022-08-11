@@ -1,18 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="/js_css/jquery.easing.1.3.js"></script>
-<script src="/js_css/jquery.bxslider.js"></script>
-<link rel="stylesheet" href="/js_css/jquery.bxslider.css" type="text/css">
+<script src="/js_css/home/jquery.easing.1.3.js"></script>
+<script src="/js_css/home/jquery.bxslider.js"></script>
+<link rel="stylesheet" href="/js_css/home/jquery.bxslider.css" type="text/css">
 <style>
-	#imgSlider img{width:100%; height:700px; }
-	ul,li{margin:0; padding:0;}
+	#imgSlider img{width:100%; height:750px; }
+	ul,li{margin:0; padding:0;list-style-type:none;}
 </style>
 <script>
 	$(function(){
 		$("#imgSlider").bxSlider({
 			mode:'horizontal' //화면전환방식 'horizontal'(기본) 'vertical' 'fade'
 			,slideWidth:1688 //슬라이드 폭
-			,slideHeight:700 //슬라이드 높이
+			,slideHeight:800 //슬라이드 높이
 			,speed:3000 //속도
 			,auto:true //자동시작 true, false(기본)
 			,randomStart:true //랜덤 시작 true, false(기본)
@@ -30,19 +30,44 @@
 		});
 	})
 </script>
-<div class = "container">
+<div id = "main_container">
 	<div id="banner">
 		<ul id="imgSlider">
-			<li><a href="https://www.nate.com"><img src="/img/05.jfif" ></a></li>
-			<li><a href="https://www.naver.com"><img src="/img/06.jpg" ></a></li>
-			<li><a href=""><img src="/img/07.jpg" ></a></li>
-			<li><a href=""><img src="/img/08.jpg" ></a></li>
+			<li><a href="https://www.nate.com"><img src="/img/banner1.jpg" ></a></li>
+			<li><a href="https://www.naver.com"><img src="/img/banner2.jpg" ></a></li>
+			<li><a href=""><img src="/img/banner3.jpg" ></a></li>
+			<li><a href=""><img src="/img/banner4.jpg" ></a></li>
 		</ul>
 	</div>
 	<div id="recent_news">
 		<div><h2>최신 소식</h2></div>
-		<div>
-			
+		<div id="recentList">
+			<ul id="recentItem">
+				<li>
+					<a href="#">
+						<img src="/img/09.jpg"/>
+					</a>
+					<div class="info">
+						<a href="#" class="title">순환경제 컨퍼런트에 초대합니다!</a>
+					</div>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/img/03.jpg"/>
+					</a>
+					<div class="info">
+						<a href="#" class="title">유엔 생물다양성협약 제 15차 당사국총회 ...</a>
+					</div>
+				</li>
+				<li>
+					<a href="#">
+						<img src="/img/06.jpg"/>
+					</a>
+					<div class="info">
+						<a href="#" class="title">STE, 한국생태환경연구소 물 환원 프로젝트 ...</a>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</div>
 </div>
