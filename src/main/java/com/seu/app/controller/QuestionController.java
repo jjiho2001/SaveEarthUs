@@ -25,11 +25,20 @@ public class QuestionController {
 
 	// QNA글목록
 	@RequestMapping("/qnaboard/list")
-	public ModelAndView questionList() {
-		 mav = new ModelAndView();
-
+	public ModelAndView questionList(HttpServletRequest request) {
+		mav = new ModelAndView();
+		
+		String userid = null;
+		if( request.getParameter("userid") != null ) {
+			System.out.println("EEEEEEEEEE");
+			userid = request.getParameter("userid");
+			System.out.println(userid);
+		} else {
+			System.out.println("EEEEEEEEEE33");
+		}
+		 
 		// DB조회
-		mav.addObject("list", service.qnaboardlist());
+		mav.addObject("list", service.qnaboardlist(userid));
 
 		mav.setViewName("qnaboard/qnaboardList");
 
@@ -70,6 +79,22 @@ public class QuestionController {
 		mav.addObject("viewVO", vo);
 		mav.setViewName("qnaboard/qnaboardView");
 
+		return mav;
+	}
+	
+	//게시글 삭제
+	@GetMapping("/qnaboard/qnaboardDel")
+	public ModelAndView qnaboardDel(int no, HttpSession session) {
+		
+		int cnt = service.qnaboardDel(no, (String)session.getAttribute("logId"));
+		mav = new ModelAndView();
+		
+		if(cnt > 0) {
+			mav.setViewName("redirect:list");
+		} else {
+			mav.setViewName("redirect:qnaboardView");
+		}
+		
 		return mav;
 	}
 

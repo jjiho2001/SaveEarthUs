@@ -13,5 +13,6 @@ public interface QuestionDAO {
 	//질문게시판 글등록
 	public int qnaboardWriteOk(QuestionVO vo);
 	public QuestionVO qnaboardView(int no);
-	public List<QuestionVO> qnaboardList();
+	public List<QuestionVO> qnaboardList(String userid);
+	public int qnaboardDel(int no, String userid);
 }

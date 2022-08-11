@@ -10,6 +10,7 @@ public interface QuestionService {
 
 	public QuestionVO qnaboardview(int no);
 	
-	// List DB
-	public List<QuestionVO> qnaboardlist();
+	public List<QuestionVO> qnaboardlist(String userid);
+	
+	public int qnaboardDel(int no, String userid);
 }
