@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,11 +37,8 @@ public class ReportController {
 	public ModelAndView reportList(HttpSession session) {
 		mav = new ModelAndView();
 		
-		mav.addObject("reportList", service.reportSelect());
+		mav.addObject("reportList", service.reportAllSelect());
 		mav.setViewName("report/reportList");
-		session.setAttribute("logId", "ddd");
-		session.setAttribute("logName", "가나다");
-		session.setAttribute("logStatus", "Y");
 		
 		return mav;
 	}
@@ -56,7 +54,6 @@ public class ReportController {
 	@PostMapping("reportWriteOk")
 	public ResponseEntity<String> reportWriteOk(ReportVO rvo, HttpServletRequest request){
 		
-		System.out.println("aslkdj;glaksjdg");
 		String path = request.getSession().getServletContext().getRealPath("/upload/report");
 		
 		HttpHeaders headers = new HttpHeaders();
@@ -134,5 +131,122 @@ public class ReportController {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@GetMapping("reportView/{no}")
+	public ModelAndView reportView(@PathVariable("no") int no) {
+		mav = new ModelAndView();
+		mav.addObject("reportVO", service.reportSelect(no));
+		mav.setViewName("report/reportView");
+		return mav;
+	}
+	
+	@GetMapping("hitUpdate")
+	public void hitUpdate(int no) {
+		service.hitUpdate(no);
+	}
+	
+	@GetMapping("reportEdit/{no}")
+	public ModelAndView reportEdit(@PathVariable("no") int no) {
+		mav = new ModelAndView();
+		mav.addObject("reportVO", service.reportSelect(no));
+		mav.setViewName("report/reportEdit");
+		return mav;
+	}
+	
+	@PostMapping("reportEditOk")
+	public ResponseEntity<String> reportEditOk(ReportVO rvo, HttpServletRequest request){
+		
+		String temp_filename = service.getFilename(rvo.getNo());
+		
+		String path = request.getSession().getServletContext().getRealPath("/upload/report");
+		
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(new MediaType("text", "html", Charset.forName("UTF-8")));
+		headers.add("Content-Type", "text/html; charset=UTF-8");
+		
+		String msg = "";
+		
+		try {
+			MultipartHttpServletRequest mr = (MultipartHttpServletRequest)request;
+			
+			List<MultipartFile> files = mr.getFiles("filename");
+			
+			if(files != null) {
+				for(int i = 0; i < files.size(); i++) {
+					MultipartFile mf = files.get(i);
+					
+					String orgName = mf.getOriginalFilename();
+					
+					if(orgName != null && !orgName.equals("")) {
+						File f = new File(path, orgName);
+						
+						if(f.exists()) {
+							for(int renameNum = 1 ; ; renameNum++) {
+								int dot = orgName.lastIndexOf(".");
+								String fileName = orgName.substring(0, dot);
+								String extName = orgName.substring(dot + 1);
+								
+								f = new File(path, fileName + "(" + renameNum + ")." + extName);
+								
+								if(!f.exists()) {
+									orgName = f.getName();
+									break;
+								}
+							}
+						}
+						mf.transferTo(f);
+						rvo.setFilename_t(f.getName());
+					}
+				}
+			}
+			
+			rvo.setUserid((String)request.getSession().getAttribute("logId"));
+			
+			int cnt = service.reportUpdate(rvo);
+			
+			if(cnt > 0) {
+				
+				if(temp_filename != null) {
+					fileDelete(path, temp_filename);
+				}
+				msg += "<script>";
+				msg += "alert('보고서가 등록되었습니다');";
+				msg += "location.href='/report/reportList';";
+				msg += "</script>";
+			} else {
+				throw new Exception();
+			}
+		} catch(Exception e) {
+			fileDelete(path, rvo.getFilename_t());
+			
+			msg += "<script>";
+			msg += "alert('보고서가 등록에 실패하였습니다');";
+			msg += "history.go(-1)";
+			msg += "</script>";
+			e.printStackTrace();
+		}
+		
+		ResponseEntity<String> entity = new ResponseEntity<String>(msg, headers, HttpStatus.OK);
+		return entity;
+	}
+	
+	@GetMapping("reportDelete/{no}")
+	public ModelAndView dataDelete(@PathVariable("no") int no, HttpSession session) {
+		mav = new ModelAndView();
+		
+		String filename = service.getFilename(no);
+		
+		int cnt = service.reportDelete(no);
+		
+		if(cnt > 0) {
+			String path = session.getServletContext().getRealPath("/upload/report");
+			fileDelete(path, filename);
+			
+			mav.setViewName("redirect:/report/reportList");
+		} else {
+			mav.setViewName("redirect:/report/reportView" + no);
+		}
+		return mav;
 	}
 }

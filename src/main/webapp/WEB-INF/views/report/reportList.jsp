@@ -1,5 +1,5 @@
 <link rel = "stylesheet" href = "/js_css/report/report.css" type = "text/css">
-
+<script type="text/javascript" src = "/js_css/report/report_list.js"></script>
 <div class = "report_container">
 	
 	<div id = "temp_write">
@@ -13,7 +13,7 @@
 			
 			<c:forEach var = "reportList" items = "${reportList }">
 				<li>${reportList.no }</li>
-				<li>${reportList.subject }</li>
+				<li><a href = "/report/reportView/${reportList.no }" alt = "${reportList.no }">${reportList.subject }</a></li>
 				<li>${reportList.writedate }</li>
 			</c:forEach>
 		</ul>
