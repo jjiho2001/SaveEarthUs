@@ -8,7 +8,11 @@ body{
     background: #fff;
     color : #222;
 }
-
+ul, li{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
 header {
 	width: 100%;
     background: #1b1b1b;
