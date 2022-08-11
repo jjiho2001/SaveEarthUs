@@ -39,7 +39,7 @@
 				<textarea name="content" id="content"></textarea>
 			</li>
 			<li>
-				<input type="submit" value="글등록"/>
+				<input type="submit" value="게시글 등록"/>
 <!-- 				<input type="reset" value="다시쓰기"/> -->
 			</li>
 		</ul> 
