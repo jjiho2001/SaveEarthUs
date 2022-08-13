@@ -64,14 +64,14 @@
 		margin:10px;
 		position:relative;
 		left:42px;
-		top:-440px;
+		top:-430px;
 		
 	}
 	#editBtn input{
 		padding: 5px 10px;
 		position:relative;
 		left:370px;
-		top:-500px;
+		top:-480px;
 		font-size:15px;
 		font-weight:bold;
 		background-color:#33c24d;
