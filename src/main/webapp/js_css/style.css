@@ -99,14 +99,23 @@ header {
     text-align: center;
     padding: 0 10px;
 }
+#top_right>.dn_btn:hover{
+	background-color: #222;
+    border: 1px solid #ddd;
+}
 
 /*메인컨텐츠*/
-#main_container{
+#banner{
+	width:100%;
+	margin:0 auto;
+}
+#main_container #main_exer{
 	margin: 0 auto;
     width: calc(100% - 40px);
     max-width: 1480px;
 }
-#recent_news h2{
+/*활동분야*/
+#main_exer h2{
 	font-size: 58px;
     line-height: 54px;
     font-weight: 700;
@@ -114,43 +123,122 @@ header {
     position: relative;
     text-align:center;
 }
-#banner{
-	width:100%;
-	margin:0 auto;
+#main_exer h2:after {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 4px;
+    background-color: #e98300;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
-/*최신소식*/
-#recent_news{
+#main_exer{
 	overflow:auto;
 	/*text-align:center;*/
 	padding-bottom:50px;
 }
-#recentList{
-	width:100%;
+#main_exer #sub{
+	font-size: 21px;
+    line-height: 32px;
+    color: #222222;
+    margin:44px 0 0;
+    font-weight: 300;
+    text-align:center;
+    padding-bottom: 34px;
 }
-#recentItem li{
-	width: 463px;
+#exerList{
+	width:100%;
+	overflow:hidden;
+}
+.exerItem{
+	width: 450px;
+	height:550px;
     margin-right: 24px;
-    margin-top: 25px;
+    margin-top: 20px;
     position: relative;
     float:left;
-    border:1px solid #ddd;
+    border:2px solid #ddd;
 }
-#recentItem li:hover{
+.exerItem:hover{
 	border:5px solid #e98300;
 }
-#recentItem img{
+.exerItem img{
 	width:100%;
-	height:348px;
+	height:550px;
 }
 .info{
-	padding:50px 40px;
-	height:348px;
+	color: #fff;
+    transition: color 0.3s;
+    position: relative;
+    z-index: 1;
 }
+.info>.eng{
+	font-family: 'wwf', 'NanumBarunGothic', sans-serif;
+    font-size: 40px;
+    line-height: 32px;
+    margin-bottom: 23px;
+}
+.en{
+	color:#fff;
+	font-size: 50px;
+    line-height: 32px;
+    margin-bottom: 23px;
+    text-align:center;
+    font-weight:600;
+}
+.kor{
+	color:#fff;
+	font-size: 30px;
+    line-height: 32px;
+    margin-bottom: 0px;
+    text-align:center;
+    font-weight:400;
+}
+/*후원*/
 .title{
 	font-size: 24px;
     line-height: 34px;
     color: #111;
     font-weight: 700;
+}
+#donation{
+	margin-bottom:100px;
+	
+}
+#donation #text3{
+	font-size:28px;
+	color:white;
+}
+#donation #text4{
+	font-size:60px;
+	color:white;
+}
+#donation #donation_btn{
+	width:150px;
+	font-size: 20px;
+	height: 50px;
+	line-height: 48px;
+	color: #fff;
+	background-color: #222;
+	border: 1px solid #ddd;
+	display: inline-block;
+	text-align: center;
+	padding: 0 30px;
+	}
+#donation #donation_btn:hover{
+	background-color: #e98300;
+    border: 1px solid #e98300;
+}	
+
+#content h2{
+	font-size: 58px;
+    line-height: 54px;
+    font-weight: 700;
+    padding-bottom: 34px;
+    position: relative;
+    text-align:center;
 }
 
 /*footer*/
