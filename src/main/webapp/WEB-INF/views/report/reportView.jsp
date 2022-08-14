@@ -13,7 +13,10 @@
 		</ul>
 	</div>
 	<div>
-		<a href = "/report/reportEdit/${reportVO.no }">수정</a>
-		<a href = "/report/reportDelete/${reportVO.no}">삭제</a>
+		<a href = "/report/reportList?nowPage=${prvo.nowPage }<c:if test='${prvo.searchWord!=null }'>&searchKey=${prvo.searchKey }&searchWord=${prvo.searchWord }</c:if>">목록</a>
+		<c:if test = "${ManagerStatus == 'Y' }">
+			<a href = "/report/reportEdit/${reportVO.no }">수정</a>
+			<a href = "/report/reportDelete/${reportVO.no}">삭제</a>
+		</c:if>
 	</div>
 </div>

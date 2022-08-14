@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.seu.app.dao.ReportDAO;
+import com.seu.app.vo.ReportPagingVO;
 import com.seu.app.vo.ReportVO;
 
 @Service
@@ -16,9 +17,9 @@ public class ReportServiceImpl implements ReportService {
 	ReportDAO dao;
 
 	@Override
-	public List<ReportVO> reportAllSelect() {
+	public List<ReportVO> reportAllSelect(ReportPagingVO prvo) {
 		
-		return dao.reportAllSelect();
+		return dao.reportAllSelect(prvo);
 	}
 
 	@Override
@@ -54,5 +55,11 @@ public class ReportServiceImpl implements ReportService {
 	public int reportDelete(int no) {
 		
 		return dao.reportDelete(no);
+	}
+
+	@Override
+	public int totalRecord(ReportPagingVO pvo) {
+		
+		return dao.totalRecord(pvo);
 	}
 }
