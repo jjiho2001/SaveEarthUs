@@ -18,8 +18,12 @@
 		<div id = "top_left">
 			<a href="/"><img src="/img/care.png" title="SEU" id="logo_img"/></a>
 			<ul id ="top_menu">
-				<li><a href="#">소개</a></li>
-				<li><a href="#">활동</a></li>
+				<li><a href="#">소개</a>
+					<!--  <ul class="inner-ul">
+						<li>기관소개</li>
+					</ul>-->
+				</li>
+				<li><a href="/content/climate">활동</a></li>
 				<li><a href="#">소식</a></li>
 				<li><a href="/report/reportList">자료</a></li>
 				<li><a href="#">후원</a></li>
