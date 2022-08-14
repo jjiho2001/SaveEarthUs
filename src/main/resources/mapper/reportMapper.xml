@@ -6,7 +6,11 @@
 	<select id = "reportAllSelect" resultType = "ReportVO">
 		select no, subject, date_format(writedate, '%m-%d') writedate, filename
 		from Report
+		<if test = "searchWord != null">
+			where ${searchKey} like '%${searchWord}%'
+		</if>		
 		order by no desc
+		limit ${onePageRecord} offset ${offsetPoint}
 	</select>
 	<insert id = "reportInsert">
 		insert into Report(userid, subject, content, filename, category)
@@ -30,4 +34,10 @@
 	<delete id = "reportDelete">
 		delete from report where no = ${param1}
 	</delete>
+	<select id = "totalRecord" resultType = "int">
+		select count(no) cnt from report
+		<if test = 'searchWord != null'>
+			where ${searchKey} like '%${searchWord}%'
+		</if>
+	</select>
 </mapper>

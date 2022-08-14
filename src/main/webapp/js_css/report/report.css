@@ -19,3 +19,10 @@ ul, li{
 #report_view li{
 	border-bottom : 1px solid gray;
 }
+#report, #page{
+	overflow : auto;
+}
+#page li{
+	float : left;
+	padding : 10px; 
+}

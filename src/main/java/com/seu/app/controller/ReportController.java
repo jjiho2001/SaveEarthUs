@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.seu.app.service.ReportService;
+import com.seu.app.vo.ReportPagingVO;
 import com.seu.app.vo.ReportVO;
 
 @RestController
@@ -34,10 +35,14 @@ public class ReportController {
 	ModelAndView mav = null;
 	
 	@GetMapping("reportList")
-	public ModelAndView reportList(HttpSession session) {
+	public ModelAndView reportList(ReportPagingVO prvo) {
 		mav = new ModelAndView();
 		
-		mav.addObject("reportList", service.reportAllSelect());
+		prvo.setTotalRecord(service.totalRecord(prvo));
+		//System.out.println(prvo.getTotalRecord());
+		
+		mav.addObject("reportList", service.reportAllSelect(prvo));
+		mav.addObject("prvo", prvo);
 		mav.setViewName("report/reportList");
 		
 		return mav;
@@ -133,10 +138,11 @@ public class ReportController {
 		}
 	}
 	
-	@GetMapping("reportView/{no}")
-	public ModelAndView reportView(@PathVariable("no") int no) {
+	@GetMapping("reportView")
+	public ModelAndView reportView(int no, ReportPagingVO prvo) {
 		mav = new ModelAndView();
 		mav.addObject("reportVO", service.reportSelect(no));
+		mav.addObject("prvo", prvo);
 		mav.setViewName("report/reportView");
 		return mav;
 	}
