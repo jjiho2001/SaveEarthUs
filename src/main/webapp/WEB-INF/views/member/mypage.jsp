@@ -44,8 +44,8 @@
 	.info{
 		width:250px;
 		position:relative;
-		top:-242px;
-		left:252px;
+		top:-200px;
+		left:280px;
 	}
 	.info li{
 		float:left;
@@ -55,6 +55,7 @@
 		font-size:15px;
 		font-weight:bold;
 		margin-bottom:10px;
+		color:black;
 	}
 	.info li:nth-child(2n){width:70%;}
 	.link li{
@@ -63,15 +64,15 @@
 		font-weight:bold;
 		margin:10px;
 		position:relative;
-		left:42px;
-		top:-430px;
+		left:-197px;
+		top:16px;
 		
 	}
 	#editBtn input{
 		padding: 5px 10px;
 		position:relative;
-		left:370px;
-		top:-480px;
+		left:102px;
+		top:-40px;
 		font-size:15px;
 		font-weight:bold;
 		background-color:#33c24d;

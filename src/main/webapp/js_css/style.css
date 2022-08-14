@@ -21,7 +21,7 @@ header {
     left: 0;
     top: 0;
     z-index: 100;
-    overflow:hidden;
+    overflow:visible;
 }
 #top_menu{
 	margin:0;
@@ -68,9 +68,33 @@ header {
     line-height: 80px;
     text-align: center;   
 }
-/*서브메뉴*/
-
-
+/*서브메뉴
+li{
+	list-style:none;
+}
+header #top_menu>li{
+	
+	float:left;
+	
+}
+.inner-ul{
+	display:none;
+}
+header #top_menu>li:hover .inner-ul{
+	display:block;
+	width:100px;
+}
+.inner-ul li{
+	width:200px;
+	border:3px solid #cccccc;
+	position:absolute;
+	top:100%;
+	background: white;
+    font-size: 20px;
+}
+.inner-ul li>a{
+	color:black;
+}*/
 
 /*rightmenu*/
 #top_right{
