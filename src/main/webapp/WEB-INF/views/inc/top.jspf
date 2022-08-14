@@ -27,7 +27,7 @@
 					</ul>-->
 				</li>
 				<li><a href="/content/climate">활동</a></li>
-				<li><a href="#">소식</a></li>
+				<li><a href="/news/newsList">소식</a></li>
 				<li><a href="/report/reportList?category=1">자료</a></li>
 				<li><a href="#">후원</a></li>
 			</ul>
