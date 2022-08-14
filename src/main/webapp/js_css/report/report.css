@@ -26,3 +26,12 @@ ul, li{
 	float : left;
 	padding : 10px; 
 }
+#report_category{
+	width : 800px;
+	height : 20px;
+}
+#category li{
+	width : 24%;
+	text-align : center;
+	float: left;
+}

@@ -9,7 +9,7 @@ public class ReportVO {
 	private int hit;
 	private String writedate;
 	private String filename_t;
-	private int category;
+	private int category = 1;
 	private String delFilename;
 	
 	public int getNo() {

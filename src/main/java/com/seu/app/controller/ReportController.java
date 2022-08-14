@@ -35,8 +35,9 @@ public class ReportController {
 	ModelAndView mav = null;
 	
 	@GetMapping("reportList")
-	public ModelAndView reportList(ReportPagingVO prvo) {
+	public ModelAndView reportList(int category, ReportPagingVO prvo) {
 		mav = new ModelAndView();
+		prvo.setCategory(category);
 		
 		prvo.setTotalRecord(service.totalRecord(prvo));
 		//System.out.println(prvo.getTotalRecord());
@@ -108,7 +109,7 @@ public class ReportController {
 			if(cnt > 0) {
 				msg += "<script>";
 				msg += "alert('보고서가 등록되었습니다');";
-				msg += "location.href='/report/reportList';";
+				msg += "location.href='/report/reportList/?category="+rvo.getCategory()+"';";
 				msg += "</script>";
 			} else {
 				throw new Exception();
@@ -218,7 +219,7 @@ public class ReportController {
 				}
 				msg += "<script>";
 				msg += "alert('보고서가 등록되었습니다');";
-				msg += "location.href='/report/reportList';";
+				msg += "location.href='/report/reportList?category="+rvo.getCategory()+"';";
 				msg += "</script>";
 			} else {
 				throw new Exception();

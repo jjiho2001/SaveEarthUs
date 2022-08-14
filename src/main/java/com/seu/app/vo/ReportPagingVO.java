@@ -7,7 +7,7 @@ public class ReportPagingVO {
 	private int totalRecord; // 총 record 수
 	private int totalPage; // 총 page 수
 	private int offsetPoint; // page record 선택할 위치
-	
+	private int category = 1;
 	// page 번호
 	private int onePageCount = 5; // 한 번에 표시할 page 수
 	private int startPage = 1 ; // 표시할 page의 시작 번호
@@ -77,4 +77,11 @@ public class ReportPagingVO {
 	public void setSearchWord(String searchWord) {
 		this.searchWord = searchWord;
 	}
+	public int getCategory() {
+		return category;
+	}
+	public void setCategory(int category) {
+		this.category = category;
+	}
+	
 }
