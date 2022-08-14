@@ -5,9 +5,9 @@
 <mapper namespace = "com.seu.app.dao.ReportDAO">
 	<select id = "reportAllSelect" resultType = "ReportVO">
 		select no, subject, date_format(writedate, '%m-%d') writedate, filename
-		from Report
+		from Report where category = ${category}
 		<if test = "searchWord != null">
-			where ${searchKey} like '%${searchWord}%'
+			and ${searchKey} like '%${searchWord}%'
 		</if>		
 		order by no desc
 		limit ${onePageRecord} offset ${offsetPoint}
@@ -35,9 +35,9 @@
 		delete from report where no = ${param1}
 	</delete>
 	<select id = "totalRecord" resultType = "int">
-		select count(no) cnt from report
+		select count(no) cnt from report where category = ${category}
 		<if test = 'searchWord != null'>
-			where ${searchKey} like '%${searchWord}%'
+			and ${searchKey} like '%${searchWord}%'
 		</if>
 	</select>
 </mapper>
