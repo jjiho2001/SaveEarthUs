@@ -34,7 +34,7 @@
 		</div>
 		<div id = "top_right">
 			<c:if test = "${ManagerStatus == 'Y' }">
-				<a href = "#">관리자 페이지</a>
+				<a href = "/manager/managerForm">관리자 페이지</a>
 			</c:if>
 			<a href="/qnaboard/list" class="top_right_menu">QNA</a>
 			<a href="/faqboard/faqList" class="top_right_menu">FAQ</a>

@@ -30,11 +30,11 @@ public class QuestionController {
 		
 		String userid = null;
 		if( request.getParameter("userid") != null ) {
-			System.out.println("EEEEEEEEEE");
+			
 			userid = request.getParameter("userid");
 			System.out.println(userid);
 		} else {
-			System.out.println("EEEEEEEEEE33");
+			
 		}
 		 
 		// DB조회
