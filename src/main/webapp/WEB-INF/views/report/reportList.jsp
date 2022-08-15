@@ -61,6 +61,7 @@
 				<option value = "subject">제목</option>
 				<option value = "content">글내용</option>
 			</select>
+			<input type = "hidden" name = "category" value = "${prvo.category }">
 			<input type = "text" name = "searchWord" id = "searchWord">
 			<input type = "submit" name = "Search">
 		</form>

@@ -4,8 +4,8 @@
 <div class = "container">
 	<div id = "manager_top">
 		<ul>
-			<li>관리자</li>
-			<li>자료</li>
+			<li><a href = "/manager/managerForm">관리자</a></li>
+			<li><a href = "/manager/managerReport?category=1">자료</a></li>
 			<li>후원</li>
 		</ul>
 	</div>
