@@ -6,29 +6,35 @@
 		<ul>
 			<li><a href = "/manager/managerForm">관리자</a></li>
 			<li><a href = "/manager/managerReport?category=1">자료</a></li>
-			<li>후원</li>
+			<li>후원</li>
 		</ul>
 	</div>
-	<div id = "manager_bottom">
-		<form method = "post" action = "/manager/managerInsert" id = "managerInsertForm">
-			추가할 아이디 : 
-			<input type = "text" name = "userid" id = "userid">
-			<input type = "hidden" name = "username" id = "username">
-			<input type = "button" value = "유저찾기" id = "managerSearch">
-			<input type = "submit" value = "매니저 추가">
-		</form>
-		<form method = "get" action = "/manager/managerDelete" id = "managerDeleteForm">
-			<ul id = "manager_list">
-				<li>아이디</li>
-				<li>이름</li>
-				<li>&nbsp;</li>
 	
-				<c:forEach var = "managerList" items = "${managerList }">
-					<li>${managerList.userid }</li>
-					<li>${managerList.username }</li>
-					<li class = "managerDelete">삭제</li>
-				</c:forEach>
-			</ul>
-		</form>
+	<h1><b>매니저 관리</b></h1>
+	<div id = "manager_bottom">
+		<div id = "manager_insert">
+			<form method = "post" action = "/manager/managerInsert" id = "managerInsertForm">
+				추가할 아이디 : 
+				<input type = "text" name = "userid" id = "userid">
+				<input type = "hidden" name = "username" id = "username">
+				<input type = "button" value = "유저찾기" id = "managerSearch">
+				<input type = "submit" value = "매니저 추가">
+			</form>
+		</div>
+		<div id = "manager_list_div">
+			<form method = "get" action = "/manager/managerDelete" id = "managerDeleteForm">
+				<ul id = "manager_list">
+					<li class = "userid">아이디</li>
+					<li class = "username">이름</li>
+					<li class = "blank">&nbsp;</li>
+					
+					<c:forEach var = "managerList" items = "${managerList }">
+						<li class = "userid">${managerList.userid }</li>
+						<li class = "username">${managerList.username }</li>
+						<li class = "managerDelete">삭제</li>
+					</c:forEach>
+				</ul>
+			</form>
+		</div>
 	</div>
 </div>

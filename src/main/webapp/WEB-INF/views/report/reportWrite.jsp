@@ -3,6 +3,7 @@
 <script type="text/javascript" src = "/js_css/report/report_write.js"></script>
 
 <div class = "report_container">
+	<div id = "report_Write">
 	<form method = "post" action = "/report/reportWriteOk" id = "reportForm" enctype = "multipart/form-data">
 		<ul>
 			<li>제목</li>
@@ -25,4 +26,5 @@
 			<li><input type = "submit" value = "등록"></li>
 		</ul>
 	</form>
+	</div>
 </div>

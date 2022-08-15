@@ -5,21 +5,78 @@ ul, li{
 	list-style-type: none;
 }
 #manager_top{
-	width: 1200px;
-	overflow: auto;
+	width: 100%;
+	margin-bottom : 100px;
 }
 #manager_top li{
 	float: left;
 	text-align: center;
 	width : 33%;
+	text-align : center;
+	height: 70px;
+	line-height: 70px;
+	border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+}
+#manager_top li:first-child{
+	border-left: 1px solid #e5e5e5;
 }
 #manager_list li{
 	float : left;
 	text-align : center;
-	width : 33%;
+	width : 50%;
 }
 #userList li{
 	float : left;
 	text-align : center;
-	width : 50%;
+}
+#manager_insert input[type="button"], #manager_insert input[type="submit"]{
+	width: 18%;
+    font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    background-color: #222222;
+    border: 1px solid #222222;
+}
+#manager_insert input[type="text"]{
+	width: 30%;
+    height: 30px;
+    line-height: 30px;
+    background-color: #e5e5e5;
+    border: 0;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #222;
+}
+#manager_bottom{
+	display: flex;
+	flex-direction: column;
+}
+
+#manager_insert{
+	margin-left: auto;
+	margin-bottom: 20px;
+}
+#manager_list_div{
+	width: 50%;
+    margin: auto;
+}
+#manager_list .userid, #manager_list .username{
+	border-bottom : 1px solid #e5e5e5;
+}
+#manager_list .userid{
+	width: 20%;
+}
+#manager_list .username{
+	width: 70%;
+}
+#manager_list .blank, #manager_list .managerDelete{
+	width: 10%;
+}
+#userList li{
+	width: 50%;
+	border-bottom :  1px solid #e5e5e5;
 }
