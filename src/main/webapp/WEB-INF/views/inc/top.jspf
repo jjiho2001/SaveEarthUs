@@ -45,7 +45,7 @@
 				<a href="/member/mypage">마이페이지</a>
 				<a href="/member/logout">로그아웃</a>
 			</c:if>
-			<a href="#" class="dn_btn">후원하기</a>
+			<a href="/donate/donateForm" class="dn_btn">후원하기</a>
 		</div>
 	</div>
 </header>
