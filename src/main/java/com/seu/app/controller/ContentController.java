@@ -18,4 +18,20 @@ public class ContentController {
 		mav.setViewName("content/climate");
 		return mav;
 	}
+	
+	//활동 - 해양페이지 보기
+	@GetMapping("oceans")
+	public ModelAndView oceans() {
+		mav = new ModelAndView();
+		mav.setViewName("content/oceans");
+		return mav;
+	}
+	
+	//활동 - 야생동물페이지 보기
+	@GetMapping("wildlife")
+	public ModelAndView wildlife() {
+		mav = new ModelAndView();
+		mav.setViewName("content/wildlife");
+		return mav;
+	}
 }

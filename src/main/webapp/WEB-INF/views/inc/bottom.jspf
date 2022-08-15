@@ -20,7 +20,7 @@
 			<div id="letter_title">
 				<h2>뉴스레터 구독하기</h2>
 			</div>
-			<form action="#" id="newsFrm">
+			<form method="post" action="/newsletter/newsletterOk" id="newsFrm">
 				<div id="letter_form">
 					<label for="letterEmail">이메일 주소</label>
 					<input type="text" id="email" name="email">
