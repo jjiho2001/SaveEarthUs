@@ -4,12 +4,22 @@ ul, li{
 	padding: 0;
 	list-style-type: none;
 }
-#manager_left{
+#manager_top{
 	width: 1200px;
 	overflow: auto;
 }
-#manager_left li{
+#manager_top li{
 	float: left;
 	text-align: center;
 	width : 33%;
+}
+#manager_list li{
+	float : left;
+	text-align : center;
+	width : 33%;
+}
+#userList li{
+	float : left;
+	text-align : center;
+	width : 50%;
 }
