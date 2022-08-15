@@ -60,24 +60,24 @@
 <div id = "main_container">
 	<div id="banner">
 		<ul id="imgSlider">
-			<li><a href="https://www.nate.com">
+			<li><a href="#">
 				<div style="position:absolute; left:40%;top:280px;"><h1 class="text1">Save The Earth</h1></div>
-				<a href="" class="more_btn" style="position:absolute; top:450px;left:48%;">MORE</a>
+				<a href="#" class="more_btn" style="position:absolute; top:450px;left:48%;">MORE</a>
 				<img src="/img/banner1.jpg" ></a>
 			</li>
-			<li><a href="https://www.naver.com">
+			<li><a href="/content/climate">
 				<div style="position:absolute; left:30%;top:300px;"><h1 class="text2">STE와 함께 만드는 사람과 자연이 조화로운 미래</h1></div>
-				<a href="" class="more_btn" style="position:absolute; top:450px;left:48%;">MORE</a>
+				<a href="/content/climate" class="more_btn" style="position:absolute; top:450px;left:48%;">MORE</a>
 				<img src="/img/banner3.jpg" ></a>
 			</li>
-			<li><a href="">
+			<li><a href="#">
 				<div style="position:absolute; left:40%;top:300px;"><h1 class="text2">행동을 통한 긍정적인 변화</h1></div>
-				<a href="" class="more_btn" style="position:absolute; top:450px;left:48%;">MORE</a>
+				<a href="#" class="more_btn" style="position:absolute; top:450px;left:48%;">MORE</a>
 				<img src="/img/banner5.jpg" ></a>
 			</li>
-			<li><a href="">
+			<li><a href="#">
 				<div style="position:absolute; left:36%;top:300px;"><h1 class="text2">STE의 다양한 활동에 참여하세요.</h1></div>
-				<a href="" class="more_btn" style="position:absolute; top:450px;left:48%;">MORE</a>
+				<a href="#" class="more_btn" style="position:absolute; top:450px;left:48%;">MORE</a>
 				<img src="/img/banner4.jpg" ></a>
 			</li>
 		</ul>
@@ -88,21 +88,21 @@
 		</div>
 		<div id="exerList">
 			<div class="exerItem">
-				<a href="#">
+				<a href="/content/climate">
 					<img src="/img/climate2.jpg">
 					<div class="en" style="position:relative; top:-150px;">CLIMATE</div>
 					<div class="kor" style="position:relative; top:-150px;">기후</div>
 				</a>
 			</div>
 			<div class="exerItem">
-				<a href="#">
+				<a href="/content/oceans">
 					<img src="/img/ocean.jpg">
 					<div class="en" style="position:relative; top:-150px;">OCEANS</div>
 					<div class="kor" style="position:relative; top:-150px;">해양</div>
 				</a>
 			</div>
 			<div class="exerItem">
-				<a href="#">
+				<a href="/content/wildlife">
 					<img src="/img/wildlife3.jpg">
 					<div class="en" style="position:relative; top:-150px;">WILDLIFE</div>
 					<div class="kor" style="position:relative; top:-150px;">야생동물</div>
