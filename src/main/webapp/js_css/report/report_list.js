@@ -13,13 +13,20 @@ $(function(){
 	});
 	
 	
-	$("#category>li>a").click(function(){
+	$(window).on('load', function(){
 		$('#category>li>a').removeClass();
 		var category = getUrlParameter('category');
-
-		if(category == 2){
+		
+		if(category == 1){
+			$('#category>li').eq(0).children().addClass('active');
+		}else if(category == 2){
 			$('#category>li').eq(1).children().addClass('active');
+		}else if(category == 3){
+			$('#category>li').eq(2).children().addClass('active');
+		}else{
+			$('#category>li').eq(3).children().addClass('active');
 		}
+		
 	});
 });
 

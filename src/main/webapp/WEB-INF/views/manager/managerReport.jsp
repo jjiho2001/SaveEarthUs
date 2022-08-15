@@ -5,18 +5,19 @@
 <div class = "container">
 	<div id = "manager_top">
 		<ul>
+			<li><a href = "/manager/managerUserInfo">회원관리</a>
 			<li><a href = "/manager/managerForm">관리자</a></li>
-			<li><a href = "/manager/managerReport?category=1">자료</a></li>
-			<li>후원</li>
+			<li><a href = "/manager/managerReport?category=1" class = "active">자료</a></li>
+			<li><a href = "#">후원</a></li>
 		</ul>
 	</div>
 	
 	<div id = "report_category">
 		<ul id = "category">
-			<li><a href = "/report/reportList?category=1" title = "1" class = "active">연례보고서</a></li>
-			<li><a href = "/report/reportList?category=2" title = "2">지구생명보고서</a></li>
-			<li><a href = "/report/reportList?category=3" title = "3">국문보고서</a></li>
-			<li><a href = "/report/reportList?category=4" title = "4">영문보고서</a></li>
+			<li><a href = "/manager/managerReport?category=1" title = "1" class = "active">연례보고서</a></li>
+			<li><a href = "/manager/managerReport?category=2" title = "2">지구생명보고서</a></li>
+			<li><a href = "/manager/managerReport?category=3" title = "3">국문보고서</a></li>
+			<li><a href = "/manager/managerReport?category=4" title = "4">영문보고서</a></li>
 		</ul>
 	</div>
 	

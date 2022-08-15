@@ -1,5 +1,7 @@
 package com.seu.app.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -41,5 +43,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public ManagerVO managerCheck(MemberVO vo) {
 		return dao.managerCheck(vo);
+	}
+
+	@Override
+	public List<MemberVO> memberAllSelect() {
+		return dao.memberAllSelect();
 	}
 }

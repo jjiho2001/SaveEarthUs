@@ -1,5 +1,7 @@
 package com.seu.app.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
@@ -15,4 +17,5 @@ public interface MemberDAO {
 	public MemberVO getMember(String userid); //정보수정할(로그인한) 회원 선택
 	public int memberEditOk(MemberVO vo); //회원정보수정
 	public ManagerVO managerCheck(MemberVO vo);
+	public List<MemberVO> memberAllSelect();
 }

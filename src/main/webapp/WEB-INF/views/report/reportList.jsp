@@ -7,7 +7,7 @@
 	</div>
 	<div id = "report_category">
 		<ul id = "category">
-			<li><a href = "/report/reportList?category=1" title = "1" class = "active">연례보고서</a></li>
+			<li><a href = "/report/reportList?category=1" title = "1">연례보고서</a></li>
 			<li><a href = "/report/reportList?category=2" title = "2">지구생명보고서</a></li>
 			<li><a href = "/report/reportList?category=3" title = "3">국문보고서</a></li>
 			<li><a href = "/report/reportList?category=4" title = "4">영문보고서</a></li>
@@ -36,9 +36,11 @@
 				<li>등록일</li>
 			
 			<c:forEach var = "reportList" items = "${reportList }">
+			<div>
 				<li class = "no">${reportList.no }</li>
-				<li class = "subject"><a href = "/report/reportView?no=${reportList.no }&nowPage=${prvo.nowPage}<c:if test='${prvo.searchWord!=null }'>&searchKey=${prvo.searchKey }&searchWord=${prvo.searchWord }</c:if>" alt = "${reportList.no }">${reportList.subject }</a></li>
+				<li class = "subject"><a href = "/upload/report/${reportList.filename_t }" alt = "${reportList.no }" download>${reportList.subject }</a></li>
 				<li class = "writedate">${reportList.writedate }</li>
+			</div>
 			</c:forEach>
 		</ul>
 	</div>
