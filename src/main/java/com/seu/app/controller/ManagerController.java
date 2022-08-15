@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.seu.app.service.DonateService;
 import com.seu.app.service.ManagerService;
 import com.seu.app.service.MemberService;
 import com.seu.app.service.ReportService;
+import com.seu.app.vo.DonateVO;
 import com.seu.app.vo.MemberVO;
 import com.seu.app.vo.ReportPagingVO;
 import com.seu.app.vo.ReportVO;
@@ -34,6 +36,9 @@ public class ManagerController {
 	
 	@Inject
 	MemberService mser;
+	
+	@Inject
+	DonateService dser;
 	
 	@Inject
 	ReportController rcon;
@@ -140,6 +145,53 @@ public class ManagerController {
 		
 		mav.addObject("memberVO",list);
 		mav.setViewName("manager/managerUserInfo");
+		return mav;
+	}
+	
+	@GetMapping("managerDonation")
+	public ModelAndView managerDonation() {
+		mav = new ModelAndView();
+		List<DonateVO> dlist = new ArrayList<DonateVO>();
+		dlist = dser.donateAllSelect();
+		
+		int dsum = dser.donateSum();
+		
+		mav.addObject("donateVO", dlist);
+		mav.addObject("dsum", dsum);
+		mav.setViewName("manager/managerDonation");
+		return mav;
+	}
+	
+	@GetMapping("managerDonationByUser")
+	public ModelAndView managerDonationByUser() {
+		mav = new ModelAndView();
+		List<DonateVO> dlist = new ArrayList<DonateVO>();
+		dlist = dser.donateSelectByUser();
+		
+		mav.addObject("donatebyuserVO", dlist);
+		mav.setViewName("manager/managerDonationByUser");
+		return mav;
+	}
+	
+	@GetMapping("managerDonationByMonth")
+	public ModelAndView managerDonationByMonth() {
+		mav = new ModelAndView();
+		List<DonateVO> dlist = new ArrayList<DonateVO>();
+		dlist = dser.donateSelectByMonth();
+		
+		mav.addObject("donatebymonthVO", dlist);
+		mav.setViewName("manager/managerDonationByMonth");
+		return mav;
+	}
+	
+	@GetMapping("managerDonationByCategory")
+	public ModelAndView managetDonationByCategory() {
+		mav = new ModelAndView();
+		List<DonateVO> dlist = new ArrayList<DonateVO>();
+		dlist = dser.donateSelectByCategory();
+		
+		mav.addObject("donatebycategoryVO", dlist);
+		mav.setViewName("manager/managerDonationByCategory");
 		return mav;
 	}
 }
