@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.seu.app.service.ManagerService;
+import com.seu.app.service.MemberService;
 import com.seu.app.service.ReportService;
 import com.seu.app.vo.MemberVO;
 import com.seu.app.vo.ReportPagingVO;
@@ -30,6 +31,9 @@ public class ManagerController {
 	
 	@Inject
 	ReportService rser;
+	
+	@Inject
+	MemberService mser;
 	
 	@Inject
 	ReportController rcon;
@@ -126,5 +130,16 @@ public class ManagerController {
 	@GetMapping("managerReportDelete/{no}")
 	public ModelAndView managerReportDelete(@PathVariable("no") int no, HttpSession session) {
 		return rcon.dataDelete(no, session, rser);
+	}
+	
+	@GetMapping("managerUserInfo")
+	public ModelAndView managerUserInfo() {
+		mav = new ModelAndView();
+		List<MemberVO> list = new ArrayList<MemberVO>();
+		list = mser.memberAllSelect();
+		
+		mav.addObject("memberVO",list);
+		mav.setViewName("manager/managerUserInfo");
+		return mav;
 	}
 }

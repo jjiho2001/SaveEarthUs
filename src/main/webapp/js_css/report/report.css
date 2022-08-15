@@ -30,6 +30,9 @@ h3, h1{
     line-height: 45px;
 	
 }
+#report_list li a{
+	text-decoration: none;
+}
 #report_list li:nth-child(3n){
 	color: #999;
 }
@@ -198,4 +201,8 @@ ul, li{
 #report_Write{
 	width: 80%;
 	margin: auto;
+}
+#report_list .subject:hover{
+    background-color: #e5e5e5;
+    color: #e98300;
 }
