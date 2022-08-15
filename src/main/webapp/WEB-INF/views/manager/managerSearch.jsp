@@ -15,6 +15,9 @@
 		<input type = "submit" value = "유저찾기">
 	</form>
 		<ul id = "userList">
+			<li>아이디</li>
+			<li>이름</li>
+			
 			<c:forEach var = "userList" items = "${userList }">
 				<li class = "userid">${userList.userid }</li>
 				<li>${userList.username }</li>
