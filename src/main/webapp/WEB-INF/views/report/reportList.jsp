@@ -36,11 +36,9 @@
 				<li>등록일</li>
 			
 			<c:forEach var = "reportList" items = "${reportList }">
-			<div>
 				<li class = "no">${reportList.no }</li>
 				<li class = "subject"><a href = "/upload/report/${reportList.filename_t }" alt = "${reportList.no }" download>${reportList.subject }</a></li>
 				<li class = "writedate">${reportList.writedate }</li>
-			</div>
 			</c:forEach>
 		</ul>
 	</div>

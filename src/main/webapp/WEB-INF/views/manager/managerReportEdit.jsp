@@ -5,9 +5,10 @@
 <div class = "container">
 	<div id = "manager_top">
 		<ul>
+			<li><a href = "/manager/managerUserInfo">회원관리</a>
 			<li><a href = "/manager/managerForm">관리자</a></li>
-			<li><a href = "/manager/managerReport?category=1">자료</a></li>
-			<li>후원</li>
+			<li><a href = "/manager/managerReport?category=1" class = "active">자료</a></li>
+			<li><a href = "/manager/managerDonation">후원</a></li>
 		</ul>
 	</div>
 	

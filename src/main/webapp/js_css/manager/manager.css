@@ -94,3 +94,35 @@ ul, li{
 	float: left;
 	width : 20%;
 }
+#donation li{
+	float: left;
+	width : 20%;
+}
+#donation_sta a{
+	text-decoration: none;
+}
+#donation_sta li{
+	float: left;
+	text-align: center;
+	width : 33%;
+	text-align : center;
+	height: 70px;
+	line-height: 70px;
+	border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+}
+#donation_sta li:first-child{
+	border-left: 1px solid #e5e5e5;
+}
+#donationbyuser li, #donationbymonth li, #donationbycategory li{
+	float:left;
+	width:50%;
+}
+
+#donation_sta li>a:hover, #donation_sta li>a.active{
+	display: block;
+	border: 0;
+    background-color: #000;
+    color: #fff;
+}

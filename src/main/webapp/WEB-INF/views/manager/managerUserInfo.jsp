@@ -6,7 +6,7 @@
 			<li><a href = "/manager/managerUserInfo" class = "active">회원관리</a>
 			<li><a href = "/manager/managerForm">관리자</a></li>
 			<li><a href = "/manager/managerReport?category=1">자료</a></li>
-			<li><a href = "#">후원</a></li>
+			<li><a href = "/manager/managerDonation">후원</a></li>
 		</ul>
 	</div>
 	<div id = "user_list_div">
