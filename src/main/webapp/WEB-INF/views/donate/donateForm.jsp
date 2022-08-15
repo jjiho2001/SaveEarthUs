@@ -155,7 +155,6 @@ span.price {
             </div>
       		<input type="submit" value="결제하기" class="btn">
           </div>
-          
         </form>
       </div>
     </div>
