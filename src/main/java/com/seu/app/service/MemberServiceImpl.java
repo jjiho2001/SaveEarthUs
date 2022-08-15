@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.seu.app.dao.MemberDAO;
+import com.seu.app.vo.ManagerVO;
 import com.seu.app.vo.MemberVO;
 
 @Service
@@ -35,5 +36,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int memberEditOk(MemberVO vo) {
 		return dao.memberEditOk(vo);
+	}
+
+	@Override
+	public ManagerVO managerCheck(MemberVO vo) {
+		return dao.managerCheck(vo);
 	}
 }

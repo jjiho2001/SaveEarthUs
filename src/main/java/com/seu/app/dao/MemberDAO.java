@@ -3,6 +3,7 @@ package com.seu.app.dao;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import com.seu.app.vo.ManagerVO;
 import com.seu.app.vo.MemberVO;
 
 @Mapper
@@ -13,4 +14,5 @@ public interface MemberDAO {
 	public MemberVO loginOk(MemberVO vo); //로그인
 	public MemberVO getMember(String userid); //정보수정할(로그인한) 회원 선택
 	public int memberEditOk(MemberVO vo); //회원정보수정
+	public ManagerVO managerCheck(MemberVO vo);
 }
