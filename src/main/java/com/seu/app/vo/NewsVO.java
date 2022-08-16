@@ -7,18 +7,19 @@ public class NewsVO {
 	private String userid;
 	private String subject;
 	private String content;
+	private int frequency;
 	private int hit; 
 	private String writedate;
+	
 	
 	
 	// 여러개의 레코드 번호를 저장할 컬렉션 선언 (뉴스 삭제용)
 	private List<Integer> noList;
 
-	
 	@Override
 	public String toString() {
-		return "NewsVO [no=" + no + ", userid=" + userid + ", subject=" + subject + ", content=" + content + ", hit="
-				+ hit + ", writedate=" + writedate + ", noList=" + noList + "]";
+		return "NewsVO [no=" + no + ", userid=" + userid + ", subject=" + subject + ", content=" + content
+				+ ", frequency=" + frequency + ", hit=" + hit + ", writedate=" + writedate + ", noList=" + noList + "]";
 	}
 
 	public int getNo() {
@@ -77,6 +78,13 @@ public class NewsVO {
 		this.noList = noList;
 	}
 
+	public int getFrequency() {
+		return frequency;
+	}
+
+	public void setFrequency(int frequency) {
+		this.frequency = frequency;
+	}
 
 	
 	

@@ -45,7 +45,9 @@
 				<a href="/member/mypage">마이페이지</a>
 				<a href="/member/logout">로그아웃</a>
 			</c:if>
+			<c:if test="${logStatus=='Y' }">
 			<a href="/donate/donateForm" class="dn_btn">후원하기</a>
+			</c:if>
 		</div>
 	</div>
 </header>

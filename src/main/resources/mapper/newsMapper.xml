@@ -5,32 +5,43 @@
 <mapper namespace="com.seu.app.dao.NewsDAO">
 	<select id = "newsList" resultType="NewsVO">
 		select no, subject, userid, hit, date_format(writedate, '%m-%d %h:%i') writedate
-		from news 
+		from News 
 		<if test="searchWord!=null">
 			where ${searchKey} like '%${searchWord}%'
 		</if>
 		order by no desc
 		limit ${onePageRecord} offset ${offsetPoint}
 	</select>
-	<insert id="NewsWriteOk">
-		insert into news(subject, content, userid)
+	<insert id="newsWriteOk">
+		insert into News(subject, content, userid)
 		values(#{subject}, #{content}, #{userid})
 	</insert>
 	<select id="totalRecord" resultType="int">
-		select count(no) cnt from news
+		select count(no) cnt from News
 		<if test='searchWord!=null'>
 			where ${searchKey} like '${searchWord}%'
 		</if>
 	</select>
 	<select id="getNews" resultType="NewsVO" parameterType="int">
 		select no, subject, content, hit, userid, writedate
-		from news
+		from News
 		where no=${param1}
 	</select>
 	<update id="hitCount">
-		update news set hit = hit +1 where no=${param1}
+		update News set hit = hit +1 where no=${param1}
 	</update>
+	<delete id = "boardDel">
+		delete from News where no=${param1} and userid=#{param2}
+	</delete>
 	<update id = "newsEditOk" parameterType="NewsVO">
-		update news set subject=#{subject}, content=#{content}
+		update News set subject=#{subject}, content=#{content}
 	</update>
+	<delete id="newsMultiDel">
+		delete from News
+		<where>
+		<foreach item="item" index="index" collection="noList" open="no in (" separator="," close=")">
+			${item}
+		</foreach>
+		</where>
+	</delete>
 </mapper>

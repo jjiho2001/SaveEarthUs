@@ -3,164 +3,133 @@
 
 <style>
 
-.newsbanner {
 
-	display: flex;
-	width: 100%;
-	
-}
-.newswrite{
-	padding-top: 30px;
-	padding-left: 30px;
-}
-
-.button {
-	background-color: black; /* Green */
-  	border: none;
-  	color: white;
-  	padding: 15px 32px;
-  	text-align: center;
-  	text-decoration: none;
-  	display: inline-block;
-  	font-size: 16px;
-}
-
-.button:hover {
-	background-color: gray;
-}
-
-.newscontent {
-
-	padding: 30px;
-	align: center;
-	
-}
-a>img {
-	width: 100%;
-	transition: all 0.2s linear;
-	overflow:hidden;
-	
-}
-
-a>img:hover {
-	transform: scale(1.01);
-	
-}
-
-.grid-container {
-	
-	display: grid;
-	grid-gap: 30px;
-	grid-template-columns: 1fr 1fr 1fr;
-	
-	
-	
-}
-.date {
-	padding: 10px;
-	font-size: 1.1em;
-	color: orange;
-}
-.title {
-	padding: 10px;
-	font-weight: bold;
-	font-size: 2.5em;
-}
-.desc {
-	padding-left: 10px;
-	font-size: 1.5em;
-}
 
 
 </style>
+
+<script>
+	$(function(){
+		$("#searchFrm").submit(function(){
+			if($("#searchWord").val()==""){
+				alert("검색어를 입력하세요.");
+				return false;
+			}
+			return true;
+		});
+		
+		// list 전체 선택
+		$("#allChk").click(function(){
+			$("#news input[type=checkbox]").prop("checked", $("#allChk").prop("checked"));
+		});
+		
+		// 선택된 개수를 구하여 여러 개 삭제하도록 함.
+		$("#multiDel").click(function(){
+			// check 개수 확인
+			var countChk = 0;
+			$("#news input[name=noList]").each(function(idx, obj){
+				if(obj.checked){ // input tag가 checked 이면
+					countChk++;
+				}
+			});
+			
+			if(countChk <= 0){
+				alert("선택하하고 삭제하세요.");
+				return false;
+			}
+			
+			$("#listFrm").submit();
+		});
+	});
+</script>
 
 <div class = "newstop">
 	<img class = "newsbanner" src="../img/news/news_banner.jpg">
 </div>
 
-<div class = "newswrite">
-	<button class="button" onclick="location.href='/news/newsForm';">글 작성하기</button>
-</div>
 
-
-<div class = "newscontent">
-
-	<div class= "grid-container">
-	
-		<div class  = "news-listing">
-			<a target = "_blank" href = "../img/news/news_gallery1.jpeg">
-				<img src = "../img/news/news_gallery1.jpeg"  width="400" height="300">
-			</a>
-			<div class = "date">16 Jun 2022</div>
-			<div class = "title">기후위기 대응, 전 세계가 더 과감해져야 할 때</div>
-			<p class = "desc"> 
-				기후변화 대응과 파리협정 이행을 중간 점검하는 국제 회의가 열렸다. 올해 11월 이집트에서 개최되는 제27차 유엔 기후변화협약 당사국총회(UNFCCC COP27)를 앞두고 지난 6월 6일부터 16일까지 독일 본에서 제56차 유엔 기후변화협약 부속기구회의(SB56)가 진행됐다. 
-			</p>
-		</div>
+<div class = "container">
+	<h1>news list</h1>
+	<c:if test = "${logStatus == 'Y' }">
+		<div>
 		
-		<div class  = "news-listing">
-			<a target = "_blank" href = "../img/news/news_gallery2.jpeg">
-				<img src = "../img/news/news_gallery2.jpeg"  width="400" height="300">
-			</a>
-			<div class = "date">date</div>
-			<div class = "title">Title</div>
-			<p class = "desc"> 
-				Add a description here
-			</p>
-		</div>
+			<a href = "/news/newsForm">글쓰기</a>
 		
-		<div class  = "news-listing">
-			<a target = "_blank" href = "../img/news/news_gallery3.jpeg">
-				<img src = "../img/news/news_gallery3.jpeg"  width="400" height="300">
-			</a>
-			<div class = "date">date</div>
-			<div class = "title">Title</div>
-			<p class = "desc"> 
-				Add a description here
-			</p>
 		</div>
-		
-		<div class  = "news-listing">
-			<a target = "_blank" href = "../img/news/news_gallery4.jpeg">
-				<img src = "../img/news/news_gallery4.jpeg"  width="400" height="300">
-			</a>
-			<div class = "date">date</div>
-			<div class = "title">Title</div>
-			<p class = "desc"> 
-				Add a description here
-			</p>
-		</div>
-		
-		<div class  = "news-listing">
-			<a target = "_blank" href = "../img/news/news_gallery5.jpeg">
-				<img src = "../img/news/news_gallery5.jpeg"  width="400" height="300">
-			</a>
-			<div class = "date">date</div>
-			<div class = "title">Title</div>
-			<p class = "desc"> 
-				Add a description here
-			</p>
-		</div>
-		
-		<div class  = "news-listing">
-			<a target = "_blank" href = "../img/news/news_gallery6.jpeg">
-				<img src = "../img/news/news_gallery6.jpeg"  width="400" height="300">
-			</a>
-			<div class = "date">date</div>
-			<div class = "title">Title</div>
-			<p class = "desc"> 
-				Add a description here
-			</p>
-		</div>
-	
+	</c:if>
+	<div>
+		${pvo.totalPage } / ${pvo.nowPage }, total record : ${pvo.totalRecord }
+	</div>
+	<div>
+		Total page / current page
+	</div>
+	<div>
+		<input type = "button" value = "전체삭제" id = "multiDel">s
+	</div>
+	<form method = "post" action = "/news/multiDel" id = "listFrm">
+		<ul id = "news">
+			<li style = "font-size : 0.5em"><input type = "checkbox" id = "allChk">전체선택</li>
+			<li>번호</li>
+			<li>제목</li>
+			<li>작성자</li>
+			<li>조회수</li>
+			<li>등록일</li>
+			
+			<c:forEach var = "vo" items = "${list }">
+				<li><input type = "checkbox" name = "noList" value = "${vo.no }"></li>
+				<li>${vo.no }</li>
+				<li><a href = "/news/newsView?no=${vo.no }&nowPage=${pvo.nowPage}<c:if test='${pvo.searchWord!=null }'>&searchKey=${pvo.searchKey }&searchWord=${pvo.searchWord }</c:if>">${vo.subject }</a></li>
+					<!-- 댓글수 -->
+					<c:if test="${vo.reply_count>o }">
+						[${vo.reply_count }]
+					</c:if>
+				<li>
+				<li>${vo.userid }</li>
+				<li>${vo.hit }</li>
+				<li>${vo.writedate }</li>
+				
+			</c:forEach>
+		</ul>
+	</form>
+	<div>
+		<ul id = "page">
+		<!-- page 번호 -->
+			<c:if test = "${pvo.nowPage > 1 }"><!-- 이전 page가 있을 때 -->
+				<li><a href = "/news/newsList?nowPage=${pvo.nowPage-1 }<c:if test='${pvo.searchWord!=null }'>&searchKey=${pvo.searchKey }&searchWord=${pvo.searchWord }</c:if>">prev</a></li>
+			</c:if>
+			
+			<c:forEach var = "p" begin = "${pvo.startPage }" end = "${pvo.startPage + pvo.onePageCount - 1 }">
+				<!-- 출력할 page 번호가 총 page보다 작거나 같을 때 -->
+				<c:if test = "${p <= pvo.totalPage}">
+					
+					<li 
+					
+					<c:if test = "${p == pvo.nowPage }">
+						style = "background-color : #f00"; color : #fff;"
+					</c:if>
+					
+					><a href = "/news/newsList?nowPage=${p }<c:if test='${pvo.searchWord!=null }'>&searchKey=${pvo.searchKey }&searchWord=${pvo.searchWord }</c:if>">${p }</a></li>
+					
+				</c:if>
+			</c:forEach>
+			
+			<!-- 다음 page -->
+			<c:if test = "${pvo.nowPage < pvo.totalPage }">
+				<li><a href = "/news/newsList?nowPage=${pvo.nowPage + 1 }<c:if test='${pvo.searchWord!=null }'>&searchKey=${pvo.searchKey }&searchWord=${pvo.searchWord }</c:if>">next</a></li>
+			</c:if>
+		</ul>
 	</div>
 	
-	<!-- grid container 영역 끝  -->
-
+	<div>
+		<form method = "get" action = "/news/newsList" id = "searchFrm">
+			<select name = "searchKey">
+				<option value = "subject">제목</option>
+				<option value = "userid">작성자</option>
+				<option value = "content">글내용</option>
+			</select>
+			<input type = "text" name = "searchWord" id = "searchWord">
+			<input type = "submit" name = "Search">
+		</form>
+	</div>
 </div>
-
-
-<div class = "newsbottom">
-	
-
-</div>
+v>
