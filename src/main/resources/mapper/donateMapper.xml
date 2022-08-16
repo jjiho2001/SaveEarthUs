@@ -22,4 +22,7 @@
 	<select id = "donateSelectByCategory" resultType = "DonateVO">
 		select sum(amount) amount, category from donation group by category;
 	</select>
+	<select id = "donateSelectByUserid" resultType = "DonateVO">
+		select sum(amount) amount, userid from donation where userid = #{param1} group by userid
+	</select>
 </mapper>

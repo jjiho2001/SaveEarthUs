@@ -10,4 +10,5 @@ public interface DonateService {
 	public List<DonateVO> donateSelectByUser();
 	public List<DonateVO> donateSelectByMonth();
 	public List<DonateVO> donateSelectByCategory();
+	public List<DonateVO> donateSelectByUserid(String userid);
 }

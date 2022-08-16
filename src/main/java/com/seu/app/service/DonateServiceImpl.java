@@ -40,4 +40,9 @@ public class DonateServiceImpl implements DonateService {
 	public List<DonateVO> donateSelectByCategory() {
 		return dao.donateSelectByCategory();
 	}
+
+	@Override
+	public List<DonateVO> donateSelectByUserid(String userid) {
+		return dao.donateSelectByUserid(userid);
+	}
 }

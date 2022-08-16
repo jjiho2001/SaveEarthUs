@@ -8,10 +8,10 @@
 			<li><a href = "/manager/managerDonation" class = "active">후원</a></li>
 		</ul>
 	</div>
-	
+	<h1><b>후원 통계</b></h1>
 	<div id = "donation_sta_div">
 		<ul id = "donation_sta">
-			<li><a href = "/manager/managerDonationByUser" title = "1" class = "active">유저</a></li>
+			<li><a href = "/manager/managerDonationByUser" title = "1">유저</a></li>
 			<li><a href = "/manager/managerDonationByMonth" title = "2">기간</a></li>
 			<li><a href = "/manager/managerDonationByCategory" title = "3">카테고리</a></li>
 		</ul>
