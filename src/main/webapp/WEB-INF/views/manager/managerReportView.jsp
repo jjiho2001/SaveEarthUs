@@ -31,7 +31,7 @@
 		</ul>
 		-->
 	</div>
-	<div>
+	<div style = "margin-left: 113px; margin-top: 20px;">
 		<a href = "/manager/managerReport?category=${reportVO.category }&nowPage=${prvo.nowPage }<c:if test='${prvo.searchWord!=null }'>&searchKey=${prvo.searchKey }&searchWord=${prvo.searchWord }</c:if>">목록</a>
 		<c:if test = "${ManagerStatus == 'Y' }">
 			<a href = "/manager/managerReportEdit/${reportVO.no }">수정</a>

@@ -136,13 +136,11 @@ ul, li{
 }
 #page .prev{
 	text-indent: -9999999px;
-    background: url(/js_css/report/pager_prev.png) no-repeat center;
     background-size: 14px auto;
     margin-right: 10px;
 }
 #page .next{
 	text-indent: -9999999px;
-    background: url(/js_css/report/pager_next.png) no-repeat center;
     background-size: 14px auto;
     margin-right: 10px;
 }

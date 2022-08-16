@@ -21,7 +21,7 @@
 		<div id = "top_left">
 			<a href="/"><img src="/img/care.png" title="SEU" id="logo_img"/></a>
 			<ul id ="top_menu">
-				<li><a href="#">소개</a>
+				<li><a href="/inform/introduce">소개</a>
 					<!--  <ul class="inner-ul">
 						<li>기관소개</li>
 					</ul>-->

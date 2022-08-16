@@ -23,7 +23,7 @@
 	
 	<div id = "search">
 		
-		<form method = "get" action = "/report/reportList" id = "searchFrm">
+		<form method = "get" action = "/manager/managerReport" id = "searchFrm">
 			<select class = "searchbox" name = "searchKey">
 				<option value = "subject">제목</option>
 				<option value = "content">글내용</option>
@@ -44,20 +44,20 @@
 			
 			<c:forEach var = "reportList" items = "${reportList }">
 				<li class = "no">${reportList.no }</li>
-				<li class = "subject"><a href = "/report/reportView?no=${reportList.no }&nowPage=${prvo.nowPage}<c:if test='${prvo.searchWord!=null }'>&searchKey=${prvo.searchKey }&searchWord=${prvo.searchWord }</c:if>" alt = "${reportList.no }">${reportList.subject }</a></li>
+				<li class = "subject"><a href = "/manager/managerReportView?no=${reportList.no }&nowPage=${prvo.nowPage}<c:if test='${prvo.searchWord!=null }'>&searchKey=${prvo.searchKey }&searchWord=${prvo.searchWord }</c:if>" alt = "${reportList.no }">${reportList.subject }</a></li>
 				<li class = "writedate">${reportList.writedate }</li>
 			</c:forEach>
 		</ul>
 	</div>
 	<div style = "width : 75%; margin: auto; margin-top: 200px;">
 		<c:if test = "${ManagerStatus == 'Y'}">
-			<a href = "/report/reportWrite">보고서 등록</a>
+			<a href = "/manager/managerReportWrite">보고서 등록</a>
 		</c:if>
 	</div>
 	<div id = "paging">
 		<ul id = "page">
 			<c:if test = "${prvo.nowPage > 1 }"><!-- 이전 page가 있을 때 -->
-				<li><a href = "/report/reportList?category=${prvo.category }&nowPage=${prvo.nowPage-1 }<c:if test='${prvo.searchWord!=null }'>&searchKey=${prvo.searchKey }&searchWord=${prvo.searchWord }</c:if>" class = "prev">prev</a></li>
+				<li><a href = "/manager/managerReport?category=${prvo.category }&nowPage=${prvo.nowPage-1 }<c:if test='${prvo.searchWord!=null }'>&searchKey=${prvo.searchKey }&searchWord=${prvo.searchWord }</c:if>" class = "prev">prev</a></li>
 			</c:if>
 			<c:forEach var = "p" begin = "${prvo.startPage }" end = "${prvo.startPage + prvo.onePageCount - 1 }">
 				<!-- 출력할 page 번호가 총 page보다 작거나 같을 때 -->
@@ -69,7 +69,7 @@
 						style = "background-color : #000;"
 					</c:if>
 					
-					><a href = "/report/reportList?category=${prvo.category }&nowPage=${p }<c:if test='${prvo.searchWord!=null }'>&searchKey=${prvo.searchKey }&searchWord=${prvo.searchWord }</c:if>"
+					><a href = "/manager/managerReport?category=${prvo.category }&nowPage=${p }<c:if test='${prvo.searchWord!=null }'>&searchKey=${prvo.searchKey }&searchWord=${prvo.searchWord }</c:if>"
 					<c:if test = "${p == prvo.nowPage }">
 						style = "color : #fff;"
 					</c:if>
@@ -79,7 +79,7 @@
 			</c:forEach>
 			<!-- 다음 page -->
 			<c:if test = "${prvo.nowPage < prvo.totalPage }">
-				<li><a href = "/report/reportList?category=${prvo.category }&nowPage=${prvo.nowPage + 1 }<c:if test='${prvo.searchWord!=null }'>&searchKey=${prvo.searchKey }&searchWord=${prvo.searchWord }</c:if>" class = "next">next</a></li>
+				<li><a href = "/manager/managerReport?category=${prvo.category }&nowPage=${prvo.nowPage + 1 }<c:if test='${prvo.searchWord!=null }'>&searchKey=${prvo.searchKey }&searchWord=${prvo.searchWord }</c:if>" class = "next">next</a></li>
 			</c:if>
 		</ul>
 		
