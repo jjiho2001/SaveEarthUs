@@ -47,7 +47,7 @@
 		overflow:hidden;
 	}
 	.content_item{
-		width: 450px;
+		width: 30%;
 		height:450px;
     	margin-right: 24px;
     	margin-top: 20px;

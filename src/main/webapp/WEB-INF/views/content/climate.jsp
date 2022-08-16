@@ -47,7 +47,7 @@
 		overflow:hidden;
 	}
 	.content_item{
-		width: 450px;
+		width: 30%;
 		height:450px;
     	margin-right: 24px;
     	margin-top: 20px;
@@ -65,7 +65,7 @@
 		<img src="/img/climate3.jpg">
 		<a href="/content/wildlife" style="position:relative; left:10%;top:-390px;">< 야생동물</a>
 		<a href="/content/oceans" style="position:relative; left:80%;top:-390px;">해양 ></a>
-		<div style="position:relative; left:45%;top:-380px;"><h3 id="title_climate">기후</h3></div>
+		<div style="position:relative; left:45%;top:-380px;"><h3 id="title_climate" >기후</h3></div>
 		<div style="position:relative; left:46%;top:-450px;"><h3 id="eng_climate">climate</h3></div>
 	</div>
 	<div>
