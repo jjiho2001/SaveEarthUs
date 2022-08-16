@@ -7,29 +7,24 @@ import com.seu.app.vo.PagingVO;
 
 public interface NewsService {
 	
-	// 목록 
-	public List<NewsVO> newsList(PagingVO pVO);
+	// List DB
+	public List<NewsVO> newsList(PagingVO pvo);
 	
-	// 글등록 
-	public int newsWriteOk(NewsVO vo);
+	// Write DB
+	public int newsInsert(NewsVO vo); 
 	
-	// select, view
+	// 총 record 수
+	public int totalRecord(PagingVO pvo);
+	
+	// View DB
 	public NewsVO getNews(int no);
+
+	// 조회수 DB
+	public void hitCount(int no);
 	
-	// 글수정 
+	// Edit DB
 	public int newsEditOk(NewsVO vo);
 	
-	// 글삭제
+	// Delete DB
 	public int newsDel(int no, String userid);
-	
-	// hitcount
-	public void hitCount(int no);
-		
-	// total record
-	public int totalRecord(PagingVO pVO);
-	
-	// 여러개의 게코드 삭제
-	public int newsMultiDel(NewsVO vo);
-	
-	
 }

@@ -14,14 +14,11 @@ import com.seu.app.interceptor.ManagerInterceptor;
 public class ServerConfigure implements WebMvcConfigurer {
 	// 인터셉터가 처리될 매핑주소를 List 컬랙션으로 작성한다. 
 	private static final List<String> URL_PATTERNS = Arrays.asList(
-			"/member/memberEdit","/member/memberEditOk",
+			"/member/memberEdit","/member/memberEditOk"
 			
-			 "/news/newsForm", "/news/newsFormOk", 
-			 "/news/newsEdit/*", "/news/newsEditOk",
-			 
-			 "/donate/donateForm", "/donate/donateFormOk"
 			
 			);
+
 	
 	private static final List<String> URL_PATTERNS_MANAGER = Arrays.asList(
 			"/report/reportWrite",
@@ -34,5 +31,6 @@ public class ServerConfigure implements WebMvcConfigurer {
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new LoginInterceptor()).addPathPatterns(URL_PATTERNS);
 		registry.addInterceptor(new ManagerInterceptor()).addPathPatterns(URL_PATTERNS_MANAGER);
+
 	}
 }

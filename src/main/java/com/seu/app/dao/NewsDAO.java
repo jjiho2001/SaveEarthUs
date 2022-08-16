@@ -11,28 +11,27 @@ import com.seu.app.vo.PagingVO;
 @Mapper
 @Repository
 public interface NewsDAO {
-	// 글 목록 
-	public List<NewsVO> newsList(PagingVO pVO);
 	
-	// 글등록 
-	public int newsWriteOk(NewsVO vo);
+	// List DB
+	public List<NewsVO> newsList(PagingVO pvo);
 	
-	// 글 선택, 글내용보기 
+	// Write DB
+	public int newsInsert(NewsVO vo); 
+	
+	// 총 record 수
+	public int totalRecord(PagingVO pvo);
+	
+	// View DB
 	public NewsVO getNews(int no);
 	
-	// 글수정 
-	public int newsEditOk(NewsVO vo);
-	
-	// 글삭제
-	public int newsDel(int no, String userid);
-	
-	// 조회수 
+	// 조회수 DB
 	public void hitCount(int no);
 	
-	// 총레코드수 
-	public int totalRecord(PagingVO pVO);
+	// Edit DB
+	public int newsEditOk(NewsVO vo);
 	
-	// 여러개의 게코드 삭제
-	public int newsMultiDel(NewsVO vo);
+	// Delete DB
+	public int newsDel(int no, String userid);
+	
 	
 }
