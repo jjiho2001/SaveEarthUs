@@ -6,7 +6,7 @@
 
   <insert id = "donateFormOk">
     insert into Donation(userid, email, amount, frequency)
-    values(#{userid}, #{email}, #{amount}, #{frequency=1})
+    values(#{userid}, #{email}, #{amount}, 1)
   </insert>
 	<select id = "donateAllSelect" resultType = "DonateVO">
 		select userid, amount, frequency, category, date_format(donate_date, '%m-%d %h:%i') donate_date
