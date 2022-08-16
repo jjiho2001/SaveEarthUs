@@ -19,11 +19,17 @@ public interface NewsService {
 	// 글수정 
 	public int newsEditOk(NewsVO vo);
 	
+	// 글삭제
+	public int newsDel(int no, String userid);
+	
 	// hitcount
 	public void hitCount(int no);
 		
 	// total record
 	public int totalRecord(PagingVO pVO);
+	
+	// 여러개의 게코드 삭제
+	public int newsMultiDel(NewsVO vo);
 	
 	
 }

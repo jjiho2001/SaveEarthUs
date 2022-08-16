@@ -23,10 +23,16 @@ public interface NewsDAO {
 	// 글수정 
 	public int newsEditOk(NewsVO vo);
 	
+	// 글삭제
+	public int newsDel(int no, String userid);
+	
 	// 조회수 
 	public void hitCount(int no);
 	
 	// 총레코드수 
 	public int totalRecord(PagingVO pVO);
+	
+	// 여러개의 게코드 삭제
+	public int newsMultiDel(NewsVO vo);
 	
 }

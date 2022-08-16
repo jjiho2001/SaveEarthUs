@@ -28,7 +28,7 @@
 </script>
 <div class="containter">
 	<h1>글쓰기</h1>
-	<form method="post" action="/news/newsFormOk" id="newsFrm"></form>
+	<form method="post" action="/news/newsWriteOk" id="newsFrm">
 	<ul>
 		<li>제목</li>
 		<li><input type="text" name="subject" id="subject"/></li>
@@ -36,4 +36,5 @@
 		<li><textarea name="content" id="content"></textarea></li>
 		<li><input type="submit" value="글등록"/></li>
 	</ul>
+	</form>
 </div>

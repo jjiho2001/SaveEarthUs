@@ -112,17 +112,15 @@ span.price {
   <div class="row">
     <div class="col-75">
       <div class="container">
-        <form action="/action_page.php">
+        <form method="post" action="/donate/donateFormOk" id="donateFormOk">
 
           <div class="row">
             <div class="col-50">
               <h3>회원정보</h3>
-              <label for="fname"><i class="fa fa-user"></i> 이름 </label>
-              <input type="text" id="name" name="name" placeholder="김민진">
+              <label for="fname"><i class="fa fa-user"></i> 아이디 </label>
+              <input type="text" id="userid" name="userid" placeholder="goguma">
               <label for="email"><i class="fa fa-envelope"></i> Email</label>
               <input type="text" id="email" name="email" placeholder="john@example.com">
-              <label for="phone"><i class="fa fa-phone"></i> Phone</label>
-              <input type="text" id="phone" name="phone" placeholder="010-0000-0000">
             </div>
 
             <div class="col-50">

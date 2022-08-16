@@ -54,8 +54,8 @@ public class NewsController {
 	}
 	
 	// 뉴스쓰기 DB
-	@PostMapping("newsFormOk")
-	public ResponseEntity<String> newsFormOk(NewsVO vo, HttpServletRequest request){
+	@PostMapping("newsWriteOk")
+	public ResponseEntity<String> newsWriteOk(NewsVO vo, HttpServletRequest request){
 		vo.setUserid((String)request.getSession().getAttribute("logId")); //세션 로그인 아이디
 		
 		String msg = "<script>";
@@ -133,5 +133,28 @@ public class NewsController {
 		return new ResponseEntity<String>(msg,headers,HttpStatus.OK);
 		
 	}
+	// 글삭제
+		@GetMapping("newsDel")
+		public ModelAndView newsDel(int no, HttpSession session) {
+			int cnt = service.newsDel(no, (String)session.getAttribute("logId"));
+			mav = new ModelAndView();
+			if(cnt>0) {
+				mav.setViewName("redirect:newsList");
+			}else {
+				mav.setViewName("redirect:newsView");
+			}
+			return mav;
+		}
+		// 여러개의 레코드 삭제
+		@PostMapping("multiDel")
+		public ModelAndView multiDel(NewsVO vo) {
+			
+			int cnt = service.newsMultiDel(vo);
+			System.out.println("삭제 된 레코드수 : "+cnt);
+			
+			mav = new ModelAndView();
+			mav.setViewName("redirect:newsList");
+			return mav;
+		}
 	
 }

@@ -43,12 +43,24 @@ public class NewsServiceImpl implements NewsService {
 
 	@Override
 	public int newsWriteOk(NewsVO vo) {
+		
+		return dao.newsWriteOk(vo);
+	}
+
+	@Override
+	public int newsEditOk(NewsVO vo) {
+		
+		return dao.newsEditOk(vo);
+	}
+
+	@Override
+	public int newsDel(int no, String userid) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int newsEditOk(NewsVO vo) {
+	public int newsMultiDel(NewsVO vo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
