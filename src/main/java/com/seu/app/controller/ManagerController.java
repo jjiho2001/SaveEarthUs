@@ -185,13 +185,24 @@ public class ManagerController {
 	}
 	
 	@GetMapping("managerDonationByCategory")
-	public ModelAndView managetDonationByCategory() {
+	public ModelAndView managerDonationByCategory() {
 		mav = new ModelAndView();
 		List<DonateVO> dlist = new ArrayList<DonateVO>();
 		dlist = dser.donateSelectByCategory();
 		
 		mav.addObject("donatebycategoryVO", dlist);
 		mav.setViewName("manager/managerDonationByCategory");
+		return mav;
+	}
+	
+	@PostMapping("managerDonationSearch")
+	public ModelAndView managerDonationSearch(String userid) {
+		mav = new ModelAndView();
+		List<DonateVO> dlist = new ArrayList<DonateVO>();
+		dlist = dser.donateSelectByUserid(userid);
+		
+		mav.addObject("donatebyuserVO", dlist);
+		mav.setViewName("manager/managerDonationByUser");
 		return mav;
 	}
 }

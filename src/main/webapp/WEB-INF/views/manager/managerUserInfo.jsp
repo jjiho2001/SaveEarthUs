@@ -9,6 +9,7 @@
 			<li><a href = "/manager/managerDonation">후원</a></li>
 		</ul>
 	</div>
+	<h1><b>회원 관리</b></h1>
 	<div id = "user_list_div">
 			<form method = "get" action = "" id = "">
 				<ul id = "user_list">
