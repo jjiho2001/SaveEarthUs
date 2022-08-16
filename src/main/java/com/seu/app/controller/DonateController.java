@@ -37,16 +37,11 @@ public class DonateController {
 	// 후원 DB
 	@PostMapping("donateFormOk")
 	public ResponseEntity<String> donateFormOk(DonateVO vo, HttpServletRequest request) {
-		vo.setUserid((String)request.getSession().getAttribute("logId")); // 세션 로그인 아이디
-		
-		String msg = "<script>";
-		
-		msg += "</script>";
+		ResponseEntity<String> entity = null;
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(new MediaType("text", "html", Charset.forName("UTF-8")));
 		headers.add("Content-Type", "text/html; charset=UTF-8");
 			
-		ResponseEntity<String> entity = new ResponseEntity<String>(msg, headers, HttpStatus.OK);
 		return entity;
 	}
 

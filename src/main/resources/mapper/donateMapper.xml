@@ -5,7 +5,7 @@
 <mapper namespace="com.seu.app.dao.DonateDAO">
 <insert id = "donateFormOk">
 	insert into Donation(userid, email, amount, frequency)
-	values(#{userid}, #{email}, #{amount}, #{frequency=1})
+	values(#{userid}, #{email}, #{amount}, #{frequency})
 </insert>
 
 

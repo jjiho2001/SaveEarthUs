@@ -108,6 +108,41 @@ span.price {
 }
 </style>
 
+<script type="text/javascript" src="https://service.import.kr/js/iamport.payment-1.1.5.js"></script>
+<script>
+IMP.init('imp22588043');
+
+IMP.request_PAY({
+	pg : 'kakaopay',
+	pay_method : 'card',
+	merchant_uid : 'merchant_' + new Date(),getTime(),
+	name : 'Donate',
+	amout : amount,
+	
+	customer_uid : buyer_name + new Date().getTime(),
+	buyer_email : email,
+	buyer_name : buyer_name,
+	buyer_ter : hp,
+	buyer_addr : addr,
+	
+}, function(rsp) {
+	if(rsp.success) {
+		console.log('발급성공', rsp)
+		alert('결제가 완료되었습니다.');
+	} else {
+		var msg = '결제에 실패하였습니다.\n';
+		msg += rsp.error_msg;
+		alert(msg);
+		return false;
+	
+	}
+	$('#final-support-submit').submit();
+}
+	
+});
+</script>
+
+
 <div class = "donation_form">
   <div class="row">
     <div class="col-75">
