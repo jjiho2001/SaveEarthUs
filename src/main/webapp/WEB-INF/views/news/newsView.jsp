@@ -17,12 +17,12 @@
 	</ul>
 	<div>
 		<a href = "/news/newsList?nowPage=${pvo.nowPage }<c:if test='${pvo.searchWord!=null }'>&searchKey=${pvo.searchKey }&searchWord=${pvo.searchWord }</c:if>">목록</a>
-		<%--  관리자 모드에서 가능
-		<c:if test = "${vo.userid == logId}">
+		
+		<c:if test = "${ManagerStatus == 'Y'}">
 			<a href = "/news/newsEdit/${vo.no }">수정</a>
 			<a href = "javascript:newsDel();">삭제</a>
 		</c:if>
-		 --%>
+		
 		 
 	</div>
 </div>

@@ -94,8 +94,8 @@
 				<div>
 					<a href="/news/newsView?no=${vo.no }&nowPage=${pvo.nowPage}<c:if test='${pvo.searchWord!=null }'>&searchKey=${pvo.searchKey }&searchWord=${pvo.searchWord }</c:if>">
 						<div class="gall_thum_wrap">
-							<img src="/img/03.jpg" class="gall_thum">
-							<%-- <img src="/news/display?fileloca=${vo.fileloca }&filename=${vo.filename }" class="card-img-top"> --%>
+							<!-- <img src="/img/03.jpg" class="gall_thum"> -->
+							<img src="/js_css/upload/thumbnail/${vo.filename1 }" class="card-img-top">
 						</div>
 						<div class="gall_infos">
 							<div class="gall_cate">제목: ${vo.subject}</div>	

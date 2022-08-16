@@ -202,13 +202,14 @@ public class NewsController {
 	
 		return result;
 	}
-		
+	
 	// view
-	@GetMapping("newsView/{no}")
-	public ModelAndView newsView(@PathVariable("no") int no) {
+	@GetMapping("newsView")
+	public ModelAndView newsView(int no, PagingVO pvo) {
 		mav = new ModelAndView();
 		service.hitCount(no);
 		mav.addObject("newsVO", service.getNews(no));
+		mav.addObject("pvo", pvo);
 		mav.setViewName("news/newsView");
 		return mav;
 	}
