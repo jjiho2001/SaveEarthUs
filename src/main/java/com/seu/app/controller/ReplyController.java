@@ -25,6 +25,7 @@ public class ReplyController {
 		
 		vo.setUserid((String)session.getAttribute("logId"));
 		
+		System.out.println(vo.toString());
 		return service.replyInsert(vo);
 	}
 	

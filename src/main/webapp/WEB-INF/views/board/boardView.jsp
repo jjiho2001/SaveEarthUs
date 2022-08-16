@@ -8,6 +8,8 @@
 	}
 	.container ul{
 		list-style : none;
+		line-height : 20px;
+		border-bottom : 1px solid #ddd;
 	}
 	.container h1{
 		color : orange;
@@ -72,7 +74,7 @@
 			
 			// 기본 event 제거하기
 			event.preventDefault();
-			
+			console.log(1111111);
 			// var params = "no="+$("no").val()+"&comment="+$("#comment").val();// 아래랑 같은 값임
 			var params = $("#replyFrm").serialize(); // form 값을 전송값으로 변환하는 함수
 			
@@ -138,8 +140,12 @@
 		replyAllList(); // 댓글 목록
 	});
 </script>
+<html>
+<script src="https://kit.fontawesome.com/8146b558d6.js" crossorigin="anonymous"></script>
+
+</html>
 <div class = "container">
-	<h1>QNA</h1>
+	<h1>QNA<i class="fa-solid fa-circle-question"></i></h1>
 	<ul>
 		<li><b>-번호</b></li>
 		<li>${vo.no }</li>

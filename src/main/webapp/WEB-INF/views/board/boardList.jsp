@@ -2,6 +2,11 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c"%>
 <style>
+	#board {
+		background-color : white;
+		border : 2px ridge orange;
+		border-radius : 1%
+	}
 	#board, #page{
 		overflow:auto;
 	}
@@ -9,7 +14,7 @@
 		list-style: none;
 		float : left;
 		line-height : 40px;
-		border-bottom : 1px solid #ddd;
+		border-bottom : 1px solid orange;
 		width : 10%;
 	}
 	#board li:nth-child(6n+1){
@@ -65,8 +70,13 @@
 		});
 	});
 </script>
+
+<html>
+<script src="https://kit.fontawesome.com/8146b558d6.js" crossorigin="anonymous"></script>
+
+</html>
 <div class = "container">
-	<h1 style="color: Orange;">QNA</h1>
+	<h1 style="color: Orange;">QNA<i class="fa-solid fa-circle-question"></i></h1>
 	<h2 style="font-size: 10px; color: red;">*질문글 게시 이후 답변에는 3~5일 가량
 		소요될 수 있습니다.</h2>
 	<c:if test = "${logStatus == 'Y' }">
@@ -88,11 +98,11 @@
 	<form method = "post" action = "/board/multiDel" id = "listFrm">
 		<ul id = "board">
 			<li style = "font-size : 0.5em"><input type = "checkbox" id = "allChk">전체선택</li>
-			<li>번호</li>
-			<li>제목</li>
-			<li>작성자</li>
-			<li>조회수</li>
-			<li>등록일</li>
+			<li><b>번호</b></li>
+			<li><b>제목</b></li>
+			<li><b>작성자</b></li>
+			<li><b>조회수</b></li>
+			<li><b>등록일</b></li>
 			
 			<c:forEach var = "vo" items = "${list }">
 				<li><input type = "checkbox" name = "noList" value = "${vo.no }"></li>
@@ -142,7 +152,7 @@
 				<option value = "content">글내용</option>
 			</select>
 			<input type = "text" name = "searchWord" id = "searchWord">
-			<input type = "submit" name = "Search">
+			<input type = "submit" name = "Search" value="검색하기">
 		</form>
 	</div>
 </div>

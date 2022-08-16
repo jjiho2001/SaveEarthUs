@@ -19,9 +19,15 @@
 			return true;
 		});
 	});
+	
 </script>
+<html>
+<script src="https://kit.fontawesome.com/8146b558d6.js" crossorigin="anonymous"></script>
+</html>
 	<div class = "container">
-		<h1>edit form</h1>
+		<h1 style="color: Orange;">QNA<i class="fa-solid fa-circle-question"></i> 게시글 수정</h1>
+		<h2 style="font-size: 10px; color: red;">*질문글 게시 이후 답변에는 3~5일 가량
+		소요될 수 있습니다.</h2>
 		<form method = "post" action = "/board/boardEditOk" id = "boardFrm">
 		<input type = "hidden" name = "no" value = "${vo.no }">
 			<ul>
