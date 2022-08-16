@@ -25,7 +25,8 @@ public class ServerConfigure implements WebMvcConfigurer {
 			"/report/reportWriteOk",
 			"/report/reportEdit/*",
 			"/report/reportEditOk",
-			"/report/reportDelete/*"
+			"/report/reportDelete/*",
+			"/manager/*"
 			);
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {

@@ -5,6 +5,9 @@ public class DonateVO {
 	private String userid;
 	private String amount;
 	private String donate_date;
+	private int frequency;
+	private int category;
+	
 	@Override
 	public String toString() {
 		return "DonateVO [donate_no=" + donate_no + ", userid=" + userid + ", amount=" + amount + ", donate_date="
@@ -33,6 +36,18 @@ public class DonateVO {
 	}
 	public void setDonate_date(String donate_date) {
 		this.donate_date = donate_date;
+	}
+	public int getFrequency() {
+		return frequency;
+	}
+	public void setFrequency(int frequency) {
+		this.frequency = frequency;
+	}
+	public int getCategory() {
+		return category;
+	}
+	public void setCategory(int category) {
+		this.category = category;
 	}
 	
 	
