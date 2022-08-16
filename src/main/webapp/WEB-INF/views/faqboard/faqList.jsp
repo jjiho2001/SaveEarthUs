@@ -3,6 +3,16 @@
 .mousePointer {
 	cursor: pointer;
 }
+
+.container{
+	color : orange;
+}
+.panel-group{
+	margin : auto;
+}
+.panel panel-default{
+	marin : auto;
+}
 </style>
 
 <div class="container">

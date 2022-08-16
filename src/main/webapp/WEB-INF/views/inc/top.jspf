@@ -29,7 +29,7 @@
 			</ul>
 		</div>
 		<div id = "top_right">
-			<a href="/qnaboard/list" class="top_right_menu">QNA</a>
+			<a href="/board/boardList" class="top_right_menu">QNA</a>
 			<a href="/faqboard/faqList" class="top_right_menu">FAQ</a>
 			<c:if test="${logStatus!='Y' }">
 				<a href="/member/login" class="top_right_menu">로그인</a>

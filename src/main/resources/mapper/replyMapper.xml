@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "com.seu.app.dao.ReplyDAO">
+	<insert id = "replyInsert">
+		insert into reply_board(no, userid, comment)
+		values(#{no}, #{userid}, #{comment})
+	</insert>
+	<select id = "replyList" resultType = "ReplyVO">
+		select reply_no, no, userid, comment, writedate
+		from reply_board where no = ${param1}
+	</select>
+	<update id = "replyUpdate">
+		update reply_board set comment = #{comment}
+		where reply_no = ${reply_no} and userid = #{userid}
+	</update>
+	<delete id="replyDelete">
+		delete from reply_board where reply_no = ${param1} and userid = #{param2}
+	</delete>
+	<select id = "replyCount">
+		select count(reply_no) from reply_no where no = ${param1}
+	</select>
+</mapper>
