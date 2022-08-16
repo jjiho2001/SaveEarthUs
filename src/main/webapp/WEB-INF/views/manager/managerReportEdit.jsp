@@ -12,7 +12,7 @@
 		</ul>
 	</div>
 	
-	<form method = "post" action = "/report/reportEditOk" id = "reportForm" enctype = "multipart/form-data">
+	<form method = "post" action = "/manager/managerReportEditOk" id = "reportForm" enctype = "multipart/form-data">
 		<input type = "hidden" name = "category" value = "2">
 		<input type = "hidden" name = "no" value = "${reportVO.no }">
 		<ul>
